@@ -2,6 +2,8 @@
 
 echo "Creating deployment package..."
 mkdir deployment
+cp quest_balance_controller.py deployment/
+cp quest_balance_calculator.py deployment/
 cd deployment
 
 echo "Deploying questBalance lambda functions..."
