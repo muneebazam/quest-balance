@@ -12,7 +12,7 @@ The service features both a controller file which acts as the entrypoint wheneve
 
 The following is a high level list of chronoical events that occur when the lambda function is invoked: 
 
-1. Refresh token and API url are fetched from **Dynamo**
+1. Refresh token and API url are fetched from DynamoDB
 
 2. Access token is obtained from Questrade API
 
