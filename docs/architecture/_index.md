@@ -1,7 +1,7 @@
 ---
 title : QuestBalance Architecture
 description : Architecture diagram and lambda implementation.
-weight : 99
+weight : 2
 ---
 
 ## QuestBalance Architecture
