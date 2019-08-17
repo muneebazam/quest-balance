@@ -31,7 +31,7 @@ def controller(data, context):
 
     # Retrieve refresh token from DynamoDB
     dynamodb = boto3.client('dynamodb')
-    entry = dynamodb.get_item(TableName='questBalance', Key={'account_id':{'S':'01'}})['Item']
+    entry = dynamodb.get_item(TableName=DYNAMO_TABLE, Key={'account_id':{'S':'01'}})['Item']
     api_url = entry['api_url']['S']
     refresh_token = entry['refresh_token']['S']
     tfsa_id = entry['tfsa_id']['N']
@@ -54,7 +54,7 @@ def controller(data, context):
     TFSA_URL = "{}v1/accounts/{}/".format(new_url, tfsa_id)
 
     # Store new refresh token in dynamo for future executions 
-    dynamodb.update_item(TableName='questBalance', Key={'account_id':{'S':'01'}}, AttributeUpdates={"api_url":{"Action":"PUT","Value":{"S":new_url}}, "refresh_token":{"Action":"PUT","Value":{"S":new_token}}})
+    dynamodb.update_item(TableName=DYNAMO_TABLE, Key={'account_id':{'S':'01'}}, AttributeUpdates={"api_url":{"Action":"PUT","Value":{"S":new_url}}, "refresh_token":{"Action":"PUT","Value":{"S":new_token}}})
     response_text = []
 
     # Get account balance information for margin account
@@ -118,3 +118,10 @@ def controller(data, context):
     r = requests.post(SLACK_URL, params=payload)
     logging.info("Successfully sent dialog payload to slack.")
     return 200
+
+# local testing
+if __name__ == "__main__":
+    class Context:
+        function_name = "local-site-publisher"
+        aws_request_id = "local"
+    controller({}, Context())
