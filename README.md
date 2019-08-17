@@ -15,5 +15,28 @@ brew install python3
 2. Clone Repository and Download Dependencies
 
 ```
-git clone 
+git clone https://github.com/muneebazam/quest-balance.git
+pip install -r requirements.txt
+```
 
+3. Set Environment Variables
+
+```
+export SLACK_TOKEN=<slack_token>
+export SLACK_CHANNEL=<slack_channel>
+export DYNAMO_TABLE=<dynamo_table_name>
+```
+
+<br/>
+
+## Usage
+
+To run the lambda function locally:
+
+```
+python quest_balance_controller.py
+```
+
+## Deployment
+
+The `deploy.sh` script will package the source files and dependencies and upload the zip to AWS.
