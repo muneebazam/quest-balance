@@ -12,7 +12,7 @@ AWS Lambda is a serverless compute tool which lets you run arbitrary code over s
 
 ![](sample_notification.png)
 
-For more detailed architecture diagrams and explanations on the vairous aspects of QuestBalance check out the pages listed below:
+For more detailed architecture diagrams and explanations on the various aspects of QuestBalance check out the pages listed below:
 
 {{% children description="true" %}}
 
