@@ -1,0 +1,8 @@
+####### requirements.txt #######
+
+#  See https://www.python.org/dev/peps/pep-0440/#version-specifiers
+
+boto3 == 1.9.111             
+botocore == 1.12.111          
+requests == 2.19.1            
+
