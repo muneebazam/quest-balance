@@ -18,6 +18,6 @@ The following is a high level list of chronoical events that occur when the lamb
 
 3. Requests sent to Balance/Position endpoints of Questrade API
 
-4. Percentage Changes are calculated and summary message is constructed.
+4. Percentage Changes are calculated and summary message is constructed
 
-5. Summary message is sent to Slack. 
+5. Summary message is sent to Slack
