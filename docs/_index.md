@@ -1,6 +1,6 @@
 ---
 title : QuestBalance
-description : AWS Lambda service to periodically send Questrade stock market updates via SMS.
+description : AWS Lambda service to periodically send Questrade stock market updates via Slack.
 weight : 99
 ---
 
